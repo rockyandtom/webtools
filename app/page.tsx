@@ -81,7 +81,7 @@ export default function Home() {
                 
                 {/* 子分类列表 */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {subcategories[category.name]?.map((subcat) => (
+                  {subcategories[category.name as keyof typeof subcategories]?.map((subcat) => (
                     <Link 
                       key={subcat} 
                       href={`/category/${category.id}/${subcat}`}
