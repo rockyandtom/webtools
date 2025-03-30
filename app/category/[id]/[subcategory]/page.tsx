@@ -27,7 +27,7 @@ export default function SubcategoryPage({ params }: { params: { id: string; subc
   }
   
   // 获取该分类下的所有子分类
-  const subcats = subcategories[category.name] || [];
+  const subcats = subcategories[category.name as keyof typeof subcategories] || [];
   
   // 检查子分类是否存在
   if (!subcats.includes(subcategoryName)) {

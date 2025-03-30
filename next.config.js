@@ -2,8 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: "standalone",
   images: {
-    domains: [],
+    unoptimized: true,
   },
   // 如果你需要添加环境变量，可以在这里添加
   env: {
