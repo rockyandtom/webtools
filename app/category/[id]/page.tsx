@@ -33,7 +33,7 @@ export default function CategoryPage({ params }: { params: { id: string } }) {
     const matchesSearch = searchQuery.trim() === '' ? true : (
       website.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       website.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      website.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+      website.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
     );
     return matchesCategory && matchesSearch;
   });

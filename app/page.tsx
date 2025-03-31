@@ -21,7 +21,7 @@ export default function Home() {
       (website) =>
         website.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         website.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        website.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        website.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
         website.url.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredWebsites(results);

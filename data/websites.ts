@@ -1,3 +1,13 @@
+export interface Website {
+  id: string;
+  title: string;
+  url: string;
+  description: string;
+  tags: string[];
+  category: string;
+  subcategory: string;
+}
+
 export const websites: Website[] = [];
 
 
