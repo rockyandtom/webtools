@@ -39,7 +39,7 @@ export default function CategoryPage({ params }: { params: { id: string } }) {
   });
   
   // 获取该分类的所有子分类
-  const subcats = subcategories[category.name] || [];
+  const subcats = subcategories[category.name as keyof typeof subcategories] || [];
 
   return (
     <>
