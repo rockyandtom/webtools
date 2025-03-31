@@ -27,7 +27,7 @@ export default function SubcategoryPage({ params }: { params: { id: string; subc
   }
   
   // 获取该分类下的所有子分类
-  const subcats = subcategories[category.name as keyof typeof subcategories] || [];
+  const subcats = subcategories[category.name] || [];
   
   // 检查子分类是否存在
   if (!subcats.includes(subcategoryName)) {
@@ -49,7 +49,7 @@ export default function SubcategoryPage({ params }: { params: { id: string; subc
     const matchesSearch = searchQuery.trim() === '' ? true : (
       website.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       website.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      website.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+      website.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
     );
     return matchesCategory && matchesSubcategory && matchesSearch;
   });

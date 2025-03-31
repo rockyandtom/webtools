@@ -21,7 +21,7 @@ export default function Home() {
       (website) =>
         website.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         website.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        website.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
+        website.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
         website.url.toLowerCase().includes(searchQuery.toLowerCase())
     );
     setFilteredWebsites(results);
@@ -81,7 +81,7 @@ export default function Home() {
                 
                 {/* 子分类列表 */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {subcategories[category.name as keyof typeof subcategories]?.map((subcat) => (
+                  {subcategories[category.name]?.map((subcat) => (
                     <Link 
                       key={subcat} 
                       href={`/category/${category.id}/${subcat}`}
